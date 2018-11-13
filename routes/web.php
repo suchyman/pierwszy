@@ -10,19 +10,25 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+// DB::table('posts')->insert([
+//     'title' => 'My first post',
+//     'body' => 'Lorem ipsum dolor sit amet',
+// ]);
 
-Route::get('/', function () {
-    return view('index', ['name' => 'John']);
-});
+Route::resource('products','ProductController');
 
-Route::get('/blog/post', function () {
-    return view('post');
-});
+// Route::get('/', function () {
+//     return view('index', ['name' => 'John']);
+// });
+
+// Route::get('/blog/post', function () {
+//     return view('post');
+// });
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-
-Route::get('/contact', function () {
-    return view('contact');
-});
+//
+// Route::get('/contact', function () {
+//     return view('contact');
+// });
