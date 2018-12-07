@@ -60,5 +60,8 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'role' => \Klaravel\Ntrust\Middleware\NtrustRole::class,
+        'permission' => \Klaravel\Ntrust\Middleware\NtrustPermission::class,
+        'ability' => \Klaravel\Ntrust\Middleware\NtrustAbility::class,
     ];
 }

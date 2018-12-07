@@ -15,19 +15,23 @@
 //     'body' => 'Lorem ipsum dolor sit amet',
 // ]);
 
-Route::resource('products','ProductController');
+Route::resource('products','ProductController')->middleware('auth');
 
 // Route::get('/', function () {
 //     return view('index', ['name' => 'John']);
 // });
 
+Route::get('/blog/post', ['middleware' => 'auth', function () {
+    return view('post');
+}]);
+//
 // Route::get('/blog/post', function () {
 //     return view('post');
 // });
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 //
 // Route::get('/contact', function () {
 //     return view('contact');

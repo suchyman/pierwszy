@@ -14,6 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
+        //$this->middleware('auth');
         $products = Product::latest()->paginate(5);
 
         return view('products.index',compact('products'))

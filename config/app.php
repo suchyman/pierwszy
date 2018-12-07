@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Dziennik Administratora'),
 
     /*
     |--------------------------------------------------------------------------
@@ -118,12 +118,12 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
-
     'providers' => [
 
         /*
          * Laravel Framework Service Providers...
          */
+        Klaravel\Ntrust\NtrustServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
@@ -208,7 +208,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Ntrust' => Klaravel\Ntrust\NtrustFacade::class,
     ],
 
 ];

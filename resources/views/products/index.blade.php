@@ -1,10 +1,11 @@
-@extends('products.layout')
 
+@extends('layouts.app')
 @section('content')
+<div class="container">
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Dodawanie do bazy</h2>
+                <h2>Lista wpisów</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('products.create') }}"> Dodaj nowy</a>
