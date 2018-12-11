@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Spatie\Activitylog\Models\Activity;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -15,7 +15,7 @@ class ProductController extends Controller
     public function index()
     {
         //$this->middleware('auth');
-        $products = Product::latest()->paginate(5);
+        $products = Product::latest()->paginate(10);
 
         return view('products.index',compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -43,12 +43,37 @@ class ProductController extends Controller
             'name' => 'required',
             'detail' => 'required',
         ]);
-
+// DB::insert('insert into users (id, date, what) values (?, ?, ?)', array(1, 'Dayle', 'heh'));
         Product::create($request->all());
+        // return History::create([
+        //     'id' => $data['data'],
+        //     'date' => 'asd',
+        //     'what' => 'sda'
+        // ]);
+
+        activity()
+   ->withProperties([$request->user_send])
+   ->log('Dodanie');
+
+      //  Spatie\Activitylog\Models\Activity::all();
+//activity()->log('Dodano nowego'); //działa
+// $lastActivity = Activity::all()->last(); //returns the last logged activity
+//
+// $lastActivity->description; //returns 'Look mum, I logged something';
+//activity()->log('User called get balance', 2153306);
 
         return redirect()->route('products.index')
                         ->with('success','Dodano!!!');
     }
+
+    /**public function create2(array $data)
+    {
+        return history::create([
+            'id' => $data['data'],
+            'date' => 'asd',
+            'what' => 'sda'
+        ]);
+    }*/
 
     /**
      * Display the specified resource.

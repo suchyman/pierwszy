@@ -44,11 +44,12 @@
        <div class="col-xs-12 col-sm-12 col-md-12">
            <div class="form-group">
                <strong>Data:</strong>
-               <input type="date" name="date" class="form-control" placeholder="Name">
+               <input type="date" name="date" class="form-control">
            </div>
        </div>
 
        <div class="col-xs-12 col-sm-12 col-md-12">
+         <strong>Serwer:</strong>
        <select name="name" class="form-control">
             <option value="Cerber2" selected> Cerber2 </option>
             <option value="SPL"> SPL </option>
@@ -57,12 +58,12 @@
       </select>
     </div>
 
-        <!-- <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Nazwa:</strong>
-                <input type="text" name="name" class="form-control" placeholder="Name">
+                <!-- <strong>User:</strong> -->
+                <input type="hidden" name="user_send" class="form-control" value="{{ Auth::user()->name }}">
             </div>
-        </div> -->
+        </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">

@@ -22,8 +22,10 @@
     <table class="table table-bordered">
         <tr>
             <th>Nr.</th>
-            <th>Nazwa</th>
-            <th>Opis</th>
+            <th>Serwer</th>
+            <th>Opis zmian</th>
+            <th>Data</th>
+            <th>Imię i nazwisko</th>
             <th width="280px">Akcja</th>
         </tr>
         @foreach ($products as $product)
@@ -31,6 +33,8 @@
             <td>{{ ++$i }}</td>
             <td>{{ $product->name }}</td>
             <td>{{ $product->detail }}</td>
+            <td>{{ $product->date }}</td>
+            <td>{{ $product->user_send }}</td>
             <td>
                 <form action="{{ route('products.destroy',$product->id) }}" method="POST">
 
