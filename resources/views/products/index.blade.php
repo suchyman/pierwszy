@@ -9,6 +9,7 @@
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('products.create') }}"> Dodaj nowy</a>
+                  <a class="btn btn-success" href="/download"> Eksport użytkoników do Excel</a>
             </div>
         </div>
     </div>
@@ -53,5 +54,9 @@
     </table>
 
     {!! $products->links() !!}
+<hr>
+asdasd
+
 
 @endsection
+
